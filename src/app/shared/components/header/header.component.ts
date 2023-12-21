@@ -10,7 +10,7 @@ import { FavoriteService } from '../../../services/favorite/favorite.service';
   templateUrl: './header.component.html',
 })
 export class HeaderComponent implements OnInit {
-  favoritesCount: number = 0; // Inicialize a contagem de favoritos
+  favoritesCount: number = 0;
 
   constructor(public router: Router, private favoriteService: FavoriteService) {}
 

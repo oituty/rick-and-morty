@@ -32,7 +32,7 @@ export class InputSearchComponent implements OnInit {
 
   clearSearch() {
     this.keyword = '';
-    this.updateSearch(this.keyword); // Atualiza imediatamente a rota sem debounce
+    this.updateSearch(this.keyword);
   }
 
   private updateSearch(keyword: string) {

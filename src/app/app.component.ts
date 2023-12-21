@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './shared/components/header/header.component'; // Importe o HeaderComponent aqui
+import { HeaderComponent } from './shared/components/header/header.component';
 import { FormsModule } from '@angular/forms';
 
 

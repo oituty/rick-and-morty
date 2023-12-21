@@ -14,14 +14,14 @@ import { CommonModule } from '@angular/common';
 export class CharacterListHeaderComponent implements OnInit {
   @Input() enableSearch: boolean = true;
 
-  pageTitle: string = 'Início'; // Define um valor padrão
+  pageTitle: string = 'Início';
 
   constructor(private titleService: Title, private route: ActivatedRoute, private metaService: Meta) {}
 
   ngOnInit() {
     this.route.data.subscribe((data) => {
       this.pageTitle = data['title'];
-      this.titleService.setTitle(this.pageTitle);
+      this.titleService.setTitle(`${this.pageTitle} | Rick and Morty`);
       this.metaService.updateTag({ name: 'description', content: 'Listagem de personagens do Rick and Morty' });
     });
   }
