@@ -1,0 +1,15 @@
+<section class="max-w-3xl mx-auto py-10 px-4">
+  <app-character-list [enableSearch]="false" [useFavorites]="true">
+    <div class="no-data-content">
+      <h2>Parece que você ainda não tem favoritos</h2>
+      <p class="subtitle">Volte à página inicial e escolha os melhores para você.</p>
+      <app-button class="mt-4">
+        <a
+          class="btn-label label"
+          [routerLink]="['']"
+        >
+        Voltar ao início</a>
+      </app-button>
+    </div>
+  </app-character-list>
+</section>
