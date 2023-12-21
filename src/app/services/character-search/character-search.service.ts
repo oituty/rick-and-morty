@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
-import { BehaviorSubject, Observable, catchError, of, tap, throwError } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Observable, catchError, throwError } from 'rxjs';
 import { SearchCharactersResponse } from '../../models/character.model';
 
 @Injectable({
@@ -8,8 +8,6 @@ import { SearchCharactersResponse } from '../../models/character.model';
 })
 export class CharacterSearchService {
   public apiUrl = 'https://rickandmortyapi.com/api/character';
-  private nextPageUrl$ = new BehaviorSubject<string | null>(null);
-  private prevPageUrl$ = new BehaviorSubject<string | null>(null);
 
   constructor(private http: HttpClient) {}
 
