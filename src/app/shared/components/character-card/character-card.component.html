@@ -27,7 +27,7 @@
       <img
         class="h-52 w-full object-cover overflow-hidden"
         [src]="character.image"
-        alt="{{ character.name }}"
+        [alt]="character.name"
       />
 
       <button class="absolute top-4 right-4" (click)="toggleFavorite()">
