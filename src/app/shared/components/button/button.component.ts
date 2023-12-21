@@ -10,7 +10,6 @@ export class ButtonComponent {
   @Output() buttonClick = new EventEmitter<void>();
 
   onButtonClick() {
-    // Emitir o evento de clique quando o botão for clicado
     this.buttonClick.emit();
   }
 }
