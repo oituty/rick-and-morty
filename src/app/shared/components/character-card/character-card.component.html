@@ -1,0 +1,53 @@
+<div
+  *ngIf="isLoading; else contentTemplate"
+  class="rounded-lg h-full border overflow-hidden border-input-border flex flex-col"
+>
+  <div class="flex relative">
+    <div
+      class="animate-pulse object-cover overflow-hidden bg-gray-300 h-52 w-full"
+    ></div>
+
+    <div
+      class="absolute top-4 right-4 h-6 w-6 bg-gray-400 rounded-full animate-pulse"
+    ></div>
+  </div>
+
+  <div class="flex flex-col p-3">
+    <div class="h-4 bg-gray-300 mb-2 w-3/4 animate-pulse"></div>
+
+    <div class="h-4 bg-gray-300 w-1/2 animate-pulse"></div>
+  </div>
+</div>
+
+<ng-template #contentTemplate>
+  <div
+    class="rounded-lg h-full border overflow-hidden border-input-border flex flex-col"
+  >
+    <div class="flex relative">
+      <img
+        class="h-52 w-full object-cover overflow-hidden"
+        [src]="character.image"
+        alt="{{ character.name }}"
+      />
+
+      <button class="absolute top-4 right-4" (click)="toggleFavorite()">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+        >
+          <path
+            [style.fill]="isFavorite ? '#0A0A0A' : 'transparent'"
+            [style.stroke]="isFavorite ? '#0A0A0A' : '#fff'"
+            d="M12 21.35l-1.45-1.32C5.4 16.04 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 7.54-8.55 11.54L12 21.35z"
+          />
+        </svg>
+      </button>
+    </div>
+    <div class="flex flex-col p-3">
+      <h3>{{ character.name }}</h3>
+      <p>{{ character.species }}</p>
+    </div>
+  </div>
+</ng-template>

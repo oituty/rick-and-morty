@@ -1,0 +1,41 @@
+<header
+  class="bg-background-primary flex justify-center sm:justify-between items-center px-6 py-3"
+>
+  <img
+    class="hidden sm:block"
+    src="assets/logo.png"
+    alt="Logo escrito Rick and Morty em verde"
+  />
+
+  <nav>
+    <ul class="flex">
+      <li
+        *ngFor="let route of routes"
+        [ngClass]="{ 'bg-white': router.isActive(route.path, true) }"
+        class="first:rounded-l-xl px-3 py-2 border-input-border border first:border-r-0 last:border-l-0 last:rounded-r-xl"
+      >
+        <a
+          class="btn-label transition-all flex items-center gap-2"
+          [ngClass]="{ 'text-primary': router.isActive(route.path, true) }"
+          [routerLink]="[route.path]"
+        >
+          <span>
+            <img
+              [src]="getIconSrc(route)"
+              class="w-6 h-6 min-w-6 min-h-6"
+              alt="{{ route.label }}"
+            />
+          </span>
+
+          {{ route.label }}
+
+          <span
+            class="rounded-full border border-input-border w-6 h-6 bg-white text-black p-2 flex justify-center items-center"
+            *ngIf="route.path === '/favorites'"
+            >{{ favoritesCount }}</span
+          >
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
