@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Creepster&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --black: #0a0a0a;
+  --white: #ffffff;
+  --primary: #0a0a0a;
+  --secondary: #ffffff;
+  --background-primary: #0a0a0a;
+  --background-secondary: #1f1f1f;
+  --title: #fafafa;
+  --body: #a4a4a4;
+  --input-border: #5d5d5d;
+  --label: #a4a4a4;
+  --title: #00b5cc;
+  --shadow-title: #b2df28;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--body);
+  background-color: var(--background-secondary);
+  overflow: hidden
+}
+
+.btn-label {
+  @apply text-sm leading-4 font-semibold;
+}
+
+h1 {
+  text-shadow: 2px 0 #b2df28, -2px 0 #b2df28, 0 2px #b2df28, 0 -2px #b2df28,
+    1px 1px #b2df28, -1px -1px #b2df28, 1px -1px #b2df28, -1px 1px #b2df28;
+  @apply font-secondary text-5xl font-normal text-ellipsis text-title;
+}
+
+h2 {
+  @apply text-ellipsis text-2xl font-bold text-white;
+}
+
+h3 {
+  @apply font-secondary text-2xl font-normal text-ellipsis text-white;
+}
+
+button {
+  @apply text-ellipsis text-base font-bold;
+}
+
+.subtitle {
+  @apply text-ellipsis text-lg font-normal text-body;
+}
+
+.no-data-content {
+  @apply flex-col flex justify-center items-center gap-4;
+}
+
+input {
+  @apply rounded-xl text-base py-3 px-4 bg-transparent border border-input-border;
+}
+
+input:focus {
+  border-color: var(
+    --shadow-title
+  ); /* Define a cor da borda quando o input está em foco */
+  outline: none; /* Remove a borda de foco padrão do navegador (opcional) */
+}
+
+input::placeholder {
+  @apply opacity-50;
+}
